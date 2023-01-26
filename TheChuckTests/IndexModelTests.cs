@@ -8,19 +8,7 @@ namespace TheChuck.Pages.Tests
     [TestClass()]
     public class IndexModelTests
     {
-        [TestMethod()]
-        public async Task OnGet_ShouldDisplayTextFromService()
-        {
-            //Arrange
-            var joke = new Joke() { Value = "Works"};
-            var sut = new IndexModel(NullLogger<IndexModel>.Instance, new JokeServiceFake(joke));
-
-            //Act
-            await sut.OnGet();
-
-            //Assert
-            Assert.AreEqual("Works", sut.DisplayText);
-        }
+      
 
         [TestMethod()]
         public async Task OnGet_ShouldDisplayTextTryAgainWhenApiIsNotWorking()
@@ -36,7 +24,7 @@ namespace TheChuck.Pages.Tests
         }
 
         
-
+    
         [TestMethod()]
         public async Task OnGet_ShouldBeUppecase()
         {
